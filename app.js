@@ -40,4 +40,11 @@ app.use(cors());
 app.use(body_parser.json());
 app.use('/',router);
 
+app.use(express.static(path.join(__dirname, 'dashboard/dist')));
+
+// Handling React routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dashboard/dist', 'index.html'));
+});
+
 module.exports = app;
