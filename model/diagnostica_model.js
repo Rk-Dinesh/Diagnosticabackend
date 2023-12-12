@@ -10,6 +10,9 @@ const diagnosticaSchema = new Schema({
     },
     email : {
         type : String,
+    },
+    comment : {
+        type : String,
     }
 });
 

@@ -2,10 +2,10 @@ const PatientServices = require("../services/patient_services")
 
 exports.register = async(req, res, next)=>{
     try{
-        const{fname,lname,dob,gender,email,phone,address,state,postcode,password} = req.body;
+        const{fname,lname,dob,gender,email,phone,address,state,postcode,password,height,weight,bmi} = req.body;
 
-        const successRes = await PatientServices.registerPatient(fname,lname,dob,gender,email,phone,address,state,postcode,password);
-        let tokenData = {fname:fname, lname: lname, dob: dob, gender: gender, email: email, phone: phone, address: address, state: state, postcode: postcode};
+        const successRes = await PatientServices.registerPatient(fname,lname,dob,gender,email,phone,address,state,postcode,password,height,weight,bmi);
+        let tokenData = {fname:fname, lname: lname, dob: dob, gender: gender, email: email, phone: phone, address: address, state: state, postcode: postcode ,height : height, weight : weight,bmi : bmi};
         res.json({status: true, token: tokenData});
 
     }catch(error){

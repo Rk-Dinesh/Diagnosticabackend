@@ -32,11 +32,11 @@ const patientSchema = new Schema({
     },
     address:{
         type: String,
-        required : true
+       
     },
     state:{
         type: String,
-        required : true
+       
     },
     postcode:{
         type: String,
@@ -46,6 +46,18 @@ const patientSchema = new Schema({
         type: String,
         required : true
     },
+    height :{
+        type: String,
+        required : true  
+    },
+    weight : {
+        type: String,
+        required : true
+    },
+    bmi : {
+        type: String,
+        required : true
+    }
 
 });
 

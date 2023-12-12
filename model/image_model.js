@@ -10,7 +10,7 @@ const imageSchema = new Schema({
     },
     comment:{
         type: String,
-        required : true
+       
     },
     painrange:{
         type: String,
