@@ -18,6 +18,7 @@ class PainrangeServices {
             throw error
         }
     }
+    
 }
 
 module.exports = PainrangeServices;
