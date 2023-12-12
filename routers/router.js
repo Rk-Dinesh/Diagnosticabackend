@@ -10,7 +10,8 @@ const eqController = require('../controller/eq_controller');
 const diagnoController = require('../controller/diagnostica_controller');
 const idcodeController = require('../controller/idcode_controller');
 const imageController = require('../controller/image_controller');
-const otpController = require('../controller/otp_controller')
+const otpController = require('../controller/otp_controller');
+const painrangecontroller = require('../controller/painrange_controller');
 
 router.post('/idcode', idcodeController.idcode);
 
@@ -66,6 +67,9 @@ router.delete('/deleteimage',imageController.delete);
 
 router.post('/otp',otpController.generateOTP);
 router.post('/verifyotp',otpController.verify);
+
+router.post('/painrange',painrangecontroller.create);
+router.get('/getpainrange',painrangecontroller.getData);
 
 
 module.exports = router;   
