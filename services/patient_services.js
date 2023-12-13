@@ -28,10 +28,10 @@ class PatientServices{
             throw error;
         }
     }
-    static async updatePatient(email,fname,lname,dob,gender,phone,address,state,postcode){
+    static async updatePatient(email,fname,lname,dob,gender,phone,address,state,postcode,height,weight,bmi){
         try{
             var query = { email: email };
-            var values = { $set: { fname: fname, lname: lname, dob: dob, gender:gender, phone:phone, address:address, state:state, postcode:postcode} };
+            var values = { $set: { fname: fname, lname: lname, dob: dob, gender:gender, phone:phone, address:address, state:state, postcode:postcode,height : height,weight : weight,bmi : bmi} };
             return await PatientModel.updateOne(query,values);
         }catch(error){
             throw error;
