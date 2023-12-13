@@ -28,7 +28,7 @@ exports.login = async(req, res, next)=>{
             res.status(200).json({status:false, message: "Invalid Password"})
         }else{
         
-        let tokenData = {fname:patient.fname, lname: patient.lname, dob: patient.dob, gender: patient.gender, email: patient.email, phone: patient.phone, address: patient.address, state: patient.state, postcode: patient.postcode};
+        let tokenData = {fname:patient.fname, lname: patient.lname, dob: patient.dob, gender: patient.gender, email: patient.email, phone: patient.phone, address: patient.address, state: patient.state, postcode: patient.postcode,height : patient.height,weight : patient.weight,bmi : patient.bmi};
 
         
         res.status(200).json({status:true, token: tokenData})
