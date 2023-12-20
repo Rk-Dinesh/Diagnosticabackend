@@ -4,11 +4,11 @@ const bcrypt = require('bcrypt');
 
 
 class DoctorServices {
-    static async register(userid, firstname, lastname, email, phone, password) {
+    static async register(userid, firstname, lastname, email, phone,role, password) {
         try {
             var idcode = await IdcodeServices.generateCode("Doctor");
             const hashedpassword = await bcrypt.hash(password, 10);
-            const createdoctor = new DoctorModel({ idcode, userid, firstname, lastname, email, phone, password: hashedpassword });
+            const createdoctor = new DoctorModel({ idcode, userid, firstname, lastname, email, phone,role, password: hashedpassword });
             return await createdoctor.save();
         } catch (err) {
             throw err;

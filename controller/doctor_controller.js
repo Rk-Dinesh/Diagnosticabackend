@@ -4,10 +4,10 @@ const bcrypt = require('bcrypt');
 
 exports.register = async (req, res, next) => {
     try {
-        const { idcode,userid,firstname,lastname,email,phone,password } = req.body;
+        const { idcode,userid,firstname,lastname,email,phone,role,password } = req.body;
 
-        const Res = await DoctorServices.register(userid,firstname,lastname,email,phone,password);
-        let userData = { idcode,userid : userid,firstname : firstname, lastname : lastname, email : email,phone : phone };
+        const Res = await DoctorServices.register(userid,firstname,lastname,email,phone,role,password);
+        let userData = { idcode,userid : userid,firstname : firstname, lastname : lastname, email : email,phone : phone,role : role };
         res.status(200).json(userData)
 
     } catch (error) {
