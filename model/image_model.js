@@ -16,6 +16,9 @@ const imageSchema = new Schema({
         type: String,
         required : true
     },
+    session: {
+        type: String
+    },
     img:{
         type: String,
         default:""
