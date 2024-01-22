@@ -24,7 +24,6 @@ const imageSchema = new Schema({
         default:""
     },
 
-
 });
 
 
