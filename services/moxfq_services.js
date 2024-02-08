@@ -18,6 +18,18 @@ class MoxfqServices{
         }
     }
 
+    static async update(email,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16) {
+        try {
+            var query = { email: email };
+            var values = { $set: { m1 : m1,m2 : m2,m3 : m3,m4 : m4,m5 : m5,m6 : m6,m7 : m7,m8 : m8,m9 : m9,m10 : m10,m11 : m11,m12 : m12,m13 : m13,m14 : m14,m15 : m15,m16 : m16} };
+
+            return await MoxfqModel.updateOne(query, values)
+
+        } catch (error) {
+            throw error
+        }
+    } 
+
     static async  getmoxfq(email) {
         try {
           const detail = await MoxfqModel.find({ email: email });

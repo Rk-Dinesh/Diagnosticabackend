@@ -25,11 +25,18 @@ exports.feteq = async(req, res, next)=>{
         res.status(200).json({status:true, id: patient._id})
         
     }
-
-
     }catch(error){
         res.status(200).json({status:false, message: error})
+    }
+}
 
+exports.Update = async (req,res, next) => {
+    try {
+        const { email,eq1,eq2,eq3,eq4,eq5,eq6} = req.body;
+        const updateData = await EqServices.update(email,eq1,eq2,eq3,eq4,eq5,eq6);
+        res.status(200).json(updateData)
+    } catch (error) {
+        next (error);
     }
 }
 

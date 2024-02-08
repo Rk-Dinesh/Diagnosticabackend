@@ -33,29 +33,34 @@ router.get('/getdoctor1', doctorController.getAdmin);
 router.get('/getemail', doctorController.getEmail);
 router.put('/updatedoctor', doctorController.Update);
 router.delete('/deletedoctor', doctorController.delete);
-router.put('/updatePassword/:email', doctorController.UpdatePassword);
+
 
 router.post('/moxfq',moxfqController.submitMoxfqAnswer);
 router.post('/fetmoxfq',moxfqController.fetmoxfq);
+router.put('/updatemoxfq',moxfqController.Update);
 router.get('/getmoxfq',moxfqController.getEmail);
 router.delete('/deletemoxfq',moxfqController.delete);
 
 router.post('/sf',sfController.submitSfAnswer);
 router.post('/fetsf',sfController.fetsf);
+router.put('/updatesf',sfController.Update);
 router.get('/getsf',sfController.getEmail);
 router.delete('/deletesf',sfController.delete);
 
 router.post('/pcs',pcsController.submitPcsAnswer);
 router.post('/fetpcs',pcsController.fetpcs);
+router.put('/updatepcs',pcsController.Update);
 router.get('/getpcss',pcsController.getData);
 router.delete('/deletepcs',pcsController.delete);
 
 router.post('/meddata',medDataController.submutMedData);
 router.get('/getmeddata',medDataController.getEmail);
+router.put('/updatemeddata',medDataController.Update);
 router.delete('/deletemeddata',medDataController.delete);
 
 router.post('/eq',eqController.submitEqAnswer);
 router.post('/feteq',eqController.feteq);
+router.put('/updateeq',eqController.Update);
 router.get('/geteq',eqController.getEmail);
 router.delete('/deleteeq',eqController.delete);
 
@@ -69,6 +74,7 @@ router.post('/otp',otpController.generateOTP);
 router.post('/verifyotp',otpController.verify);
 
 router.post('/painrange',painrangecontroller.create);
+router.put('/updatpainrange',painrangecontroller.Update);
 router.get('/getpainrange',painrangecontroller.getData);
 
 

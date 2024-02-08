@@ -20,6 +20,18 @@ class EqServices{
         }
     }
 
+    static async update(email,eq1,eq2,eq3,eq4,eq5,eq6) {
+        try {
+            var query = { email: email };
+            var values = { $set: { eq1 : eq1, eq2 : eq2, eq3 : eq3, eq : eq4, eq5 : eq5, eq6 : eq6} };
+
+            return await EqModel.updateOne(query, values)
+
+        } catch (error) {
+            throw error
+        }
+    }
+
     static async  geteq(email) {
         try {
           const detail = await EqModel.find({ email: email });

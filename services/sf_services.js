@@ -20,6 +20,18 @@ class SfServices{
         }
     }
 
+    static async update(email,sf1,sf2,sf3,sf4,sf5,sf6,sf7,sf8,sf9,sf10,sf11,sf12,sf13,sf14,sf15,sf16,sf17,sf18,sf19,sf20,sf21,sf22,sf23,sf24,sf25,sf26,sf27,sf28,sf29,sf30,sf31,sf32,sf33,sf34,sf35,sf36) {
+        try {
+            var query = { email: email };
+            var values = { $set: { sf1 : sf1,sf2 : sf2,sf3 : sf3,sf4 : sf4,sf5 : sf5,sf6 : sf6,sf7 : sf7,sf8 : sf8,sf9 : sf9,sf10 : sf10,sf11 : sf11,sf12 : sf12,sf13 : sf13,sf14 : sf14,sf15 : sf15,sf16 : sf16,sf17 : sf17,sf18 : sf18,sf19 : sf19,sf20 : sf20,sf21 : sf21,sf22 : sf22,sf23 : sf23,sf24 : sf24,sf25 : sf25,sf26 : sf26,sf27 : sf27,sf28 : sf28,sf29 : sf29,sf30 : sf30,sf31 : sf31,sf32 : sf32,sf33 : sf33,sf34 : sf34,sf35 : sf35,sf36 : sf36} };
+
+            return await SfModel.updateOne(query, values)
+
+        } catch (error) {
+            throw error
+        }
+    }
+
     static async  getsf(email) {
         try {
           const detail = await SfModel.find({ email: email });

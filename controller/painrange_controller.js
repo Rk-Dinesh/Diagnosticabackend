@@ -13,6 +13,16 @@ exports.create = async(req, res, next)=>{
     }
 }
 
+exports.Update = async (req,res, next) => {
+    try {
+        const { email,painrange} = req.body;
+        const updateData = await PainrangeServices.update(email,painrange);
+        res.status(200).json(updateData)
+    } catch (error) {
+        next (error);
+    }
+}
+
 exports.getData = async(req,res,next) => {
     try {
         const {email} = req.query;

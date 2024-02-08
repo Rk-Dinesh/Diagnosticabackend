@@ -24,11 +24,18 @@ exports.fetmoxfq = async(req, res, next)=>{
         res.status(200).json({status:true, id: patient._id})
         
     }
-
-
     }catch(error){
         res.status(200).json({status:false, message: error})
+    }
+}
 
+exports.Update = async (req,res, next) => {
+    try {
+        const { email,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16} = req.body;
+        const updateData = await MoxfqServices.update(email,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16);
+        res.status(200).json(updateData)
+    } catch (error) {
+        next (error);
     }
 }
 

@@ -10,6 +10,18 @@ class PainrangeServices {
         }
     }
 
+    static async update(email,painrange) {
+        try {
+            var query = { email: email };
+            var values = { $set: { painrange:painrange} };
+
+            return await PainrangeModel.updateOne(query, values)
+
+        } catch (error) {
+            throw error
+        }
+    }
+
     static async getemail(email) {
         try {
 

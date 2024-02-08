@@ -18,6 +18,18 @@ class PcsServices{
         }
     }
 
+    static async update(email,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13) {
+        try {
+            var query = { email: email };
+            var values = { $set: { S1 :S1,S2 :S2,S3 :S3,S4 :S4,S5 :S5,S6 :S6,S7 :S7,S8 :S8,S9 :S9,S10 :S10,S11 :S11,S12 :S12,S13 :S13} };
+
+            return await PcsModel.updateOne(query, values)
+
+        } catch (error) {
+            throw error
+        }
+    }
+
     static async getpcs(email){
         try {
             

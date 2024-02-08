@@ -20,14 +20,21 @@ exports.fetpcs = async(req, res, next)=>{
             res.status(200).json({status:false, message: "Not Answer"})
         }else{
         
-        res.status(200).json({status:true, id: patient._id})
-        
+        res.status(200).json({status:true, id: patient._id})      
     }
-
-
     }catch(error){
         res.status(200).json({status:false, message: error})
 
+    }
+}
+
+exports.Update = async (req,res, next) => {
+    try {
+        const { email,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13} = req.body;
+        const updateData = await PcsServices.update(email,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13);
+        res.status(200).json(updateData)
+    } catch (error) {
+        next (error);
     }
 }
 
