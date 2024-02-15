@@ -59,8 +59,8 @@ exports.verifyphone = async(req, res, next)=>{
 
 exports.update = async(req, res, next)=>{
     try{
-        const{email,fname,lname,dob,gender,phone,address,state,postcode,height,weight,bmi} = req.body;
-        const successRes = await PatientServices.updatePatient(email,fname,lname,dob,gender,phone,address,state,postcode,height,weight,bmi);
+        const{email,fname,lname,dob,gender,phone,address,state,postcode,height,weight} = req.body;
+        const successRes = await PatientServices.updatePatient(email,fname,lname,dob,gender,phone,address,state,postcode,height,weight);
         res.json({status: true, success: successRes});
         console.log(successRes);
     }catch(error){

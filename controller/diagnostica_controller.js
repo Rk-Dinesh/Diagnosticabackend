@@ -2,9 +2,9 @@ const DiagnosticaServices = require('../services/diagnostica_services');
 
 exports.create = async(req, res, next)=>{
     try{
-        const{data,email,comment} = req.body;
+        const{data,email,comment,doctor,date} = req.body;
 
-        const successRes = await DiagnosticaServices.data(data,email,comment);
+        const successRes = await DiagnosticaServices.data(data,email,comment,doctor,date);
 
         res.json({status: true, success: " Submittted Successfully"});
 

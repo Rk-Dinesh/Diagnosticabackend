@@ -13,7 +13,14 @@ const diagnosticaSchema = new Schema({
     },
     comment : {
         type : String,
-    }
+    },
+    doctor : {
+        type : String,
+    },
+    date: {
+        type: String,
+        
+      },
 });
 
 const DiagnosticaModel = db.model('Diagnostica',diagnosticaSchema);

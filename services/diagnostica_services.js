@@ -1,9 +1,9 @@
 const DiagnosticaModel = require('../model/diagnostica_model');
 
 class DiagnosticaServices {
-    static async data(data,email,comment){
+    static async data(data,email,comment,doctor,date){
         try{
-            const Data = new DiagnosticaModel({data,email,comment});
+            const Data = new DiagnosticaModel({data,email,comment,doctor,date});
             return await Data.save();
         }catch(err){
             throw err;
