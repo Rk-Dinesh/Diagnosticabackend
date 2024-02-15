@@ -1,10 +1,11 @@
-const PainrangeServices = require('../services/painrange_services');
+const CommentServices = require("../services/comment_service");
+
 
 exports.create = async(req, res, next)=>{
     try{
-        const{email,painrange,session} = req.body;
+        const{email,comment} = req.body;
 
-        const successRes = await PainrangeServices.range(email,painrange,session);
+        const successRes = await CommentServices.range(email,comment);
 
         res.json({status: true, success: " Submittted Successfully"});
 
@@ -15,8 +16,8 @@ exports.create = async(req, res, next)=>{
 
 exports.Update = async (req,res, next) => {
     try {
-        const { email,painrange,session} = req.body;
-        const updateData = await PainrangeServices.update(email,painrange,session);
+        const { email,comment} = req.body;
+        const updateData = await CommentServices.update(email,comment);
         res.status(200).json(updateData)
     } catch (error) {
         next (error);
@@ -26,7 +27,7 @@ exports.Update = async (req,res, next) => {
 exports.getData = async(req,res,next) => {
     try {
         const {email} = req.query;
-        const User = await PainrangeServices.getemail(email);
+        const User = await CommentServices.getemail(email);
         res.status(200).json(User)
     } catch (error) {
         next(error);

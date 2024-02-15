@@ -25,9 +25,6 @@ app.post('/upload',(req,res)=>{
         }else{
             const newImage = new ImageModel({
                 email: req.body.email,
-                comment: req.body.comment,
-                painrange: req.body.painrange,
-                session:req.body.session,
                 img: req.file.filename,
             })
             newImage.save().then(()=>res.send('success')).catch(err=> console.log(err))

@@ -1,19 +1,19 @@
 const PainrangeModel = require('../model/painrange_model');
 
 class PainrangeServices {
-    static async range(email,painrange){
+    static async range(email,painrange,session){
         try{
-            const Data = new PainrangeModel({email,painrange});
+            const Data = new PainrangeModel({email,painrange,session});
             return await Data.save();
         }catch(err){
             throw err;
         }
     }
 
-    static async update(email,painrange) {
+    static async update(email,painrange,session) {
         try {
             var query = { email: email };
-            var values = { $set: { painrange:painrange} };
+            var values = { $set: { painrange:painrange,session:session} };
 
             return await PainrangeModel.updateOne(query, values)
 

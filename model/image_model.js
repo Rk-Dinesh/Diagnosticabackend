@@ -8,17 +8,7 @@ const imageSchema = new Schema({
         type: String,
         required : true
     },
-    comment:{
-        type: String,
-       
-    },
-    painrange:{
-        type: String,
-        required : true
-    },
-    session: {
-        type: String
-    },
+   
     img:{
         type: String,
         default:""

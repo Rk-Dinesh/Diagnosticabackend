@@ -4,21 +4,19 @@ const db = require('../config/db')
 
 const { Schema } = mongoose;
 
-const painrangeSchema = new Schema({
+const commentSchema = new Schema({
     
     email : {
         type : String,
     },
    
-    painrange:{
+    comment:{
         type: String,
         required : true
     },
-    session: {
-        type: String
-    },
+   
 });
 
-const PainrangeModel = db.model('Painrange',painrangeSchema);
+const CommentModel = db.model('comment',commentSchema);
 
-module.exports = PainrangeModel;
+module.exports = CommentModel;

@@ -12,6 +12,7 @@ const idcodeController = require('../controller/idcode_controller');
 const imageController = require('../controller/image_controller');
 const otpController = require('../controller/otp_controller');
 const painrangecontroller = require('../controller/painrange_controller');
+const commentcontroller = require('../controller/Comment_controller')
 
 router.post('/idcode', idcodeController.idcode);
 
@@ -77,5 +78,8 @@ router.post('/painrange',painrangecontroller.create);
 router.put('/updatpainrange',painrangecontroller.Update);
 router.get('/getpainrange',painrangecontroller.getData);
 
+router.post('/comment',commentcontroller.create);
+router.put('/updatcomment',commentcontroller.Update);
+router.get('/getcomment',commentcontroller.getData);
 
 module.exports = router;   
